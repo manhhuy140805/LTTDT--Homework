@@ -21,8 +21,15 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-//        addEvent();
+        addEvent();
     }
 
+    private void addEvent() {
+        binding.buttonSignIn.setOnClickListener(this::onClickSignIn);
+    }
 
+    private void onClickSignIn(View view) {
+        Intent intent = new Intent(this, CreateAccount.class);
+        startActivity(intent);
+    }
 }

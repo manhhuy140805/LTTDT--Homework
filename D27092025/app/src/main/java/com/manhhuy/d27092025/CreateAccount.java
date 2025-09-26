@@ -21,8 +21,15 @@ public class CreateAccount extends AppCompatActivity {
         binding = ActivityCreateAccountBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-//        addEvent();
+        addEvent();
     }
 
+    private void addEvent() {
+        binding.buttonLogin.setOnClickListener(this::onClickLogin);
+    }
 
+    private void onClickLogin(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }
